@@ -25,11 +25,11 @@ code example
 ```
 
 
-## Future Feature Updates
-- [X] Item A
-- [ ] Item B
-- [ ] Item C
-- [ ] Item D
+## Future feature updates
+- [ ] Add detailed fuel information
+- [ ] Replace color coded pins with recognizable icons
+- [ ] Add sorting functionality
+- [ ] highlight plant details on map click
 
 
 
