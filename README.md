@@ -13,7 +13,11 @@ This project was performed in 3 steps with the goal of consolidating data from m
 
 
 #### Part I : Data aquisition and Database creation
-Tools used: Python, CosmosDB
+Tools used:
+<ul>
+  <li>Python</li>
+  <li>CosmosDB</li>
+</ul>
 Using Python, I scraped 3 separate EIA endpoints for relevant Power Plant information:
 <ol>
   <li>Name</li>
@@ -24,11 +28,24 @@ Using Python, I scraped 3 separate EIA endpoints for relevant Power Plant inform
   <li>determination of the sustainability of the primary fuel used by the definiton set out by the EIA https://www.eia.gov/energyexplained/renewable-sources/ </li>
 </ol>
 
-During this process the data was cleaned to prevent listing any powerplants that were not in operation by 2020 (the most recent year data was available), or that were in operation but had an output of 0 MWH or less. this data was consolidated into a JSON file.
+During this process the data was cleaned to prevent listing any powerplants that were not in operation by 2020 (the most recent year data was available), or that were in operation but had an output of 0 MWH or less. This data was then consolidated into a JSON file.
 #### Part II : Backend and database population
-Tools used: Python, Flask, Azure functions
+Tools used:
+<ul>
+  <li>Python</li>
+  <li>Flask</li>
+  <li>Azure FUnctions</>
+</ul>
+An API was created using python with flask and connected to the CosmosDB database. It was created to be the only channel through which the database can be accessed or updated, and the POST endpoint checks new powerplant submissions for data integrity. The JSON containing the power plant data is then uploaded to the DB via the API. JWT tokens are implemented here to maintain that only authorized users have Create/Update abilities, while read abilities can be performed by anyone with access to the endpoint
+  
 #### Part III : Frontend
-Tools used: React.js, Bing maps developer tools, azure static web apps
+Tools used:
+  <ul>
+  <li>React.js</li>
+  <li>Bing maps developer tools</li>
+  <li>azure static web apps</>
+</ul>
+ Bing maps was used to display geographic data on a familiar map interface, with green pushpins representing powerplants using sustainable fuels while red pushpins represent non-sustainable fuel sources. Further plant details are provided in a detailsList to the right of the map.
 
 ## Install and run
 
@@ -74,7 +91,7 @@ Tools used: React.js, Bing maps developer tools, azure static web apps
 - [x] Add detailed fuel information
 - [ ] Replace color coded pins with recognizable icons
 - [ ] Add sorting functionality
-- [ ] highlight plant details on map click
+- [ ] Add map/list respond on click
 - [ ] expand coverage to continental USA
 
 
