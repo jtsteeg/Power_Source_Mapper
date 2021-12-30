@@ -1,4 +1,5 @@
 # Power Source Mapper
+deployed on azure: https://www.powersourcemapper.com/
 ## Project description
 ### What problem does this project solve?
 When planning to build a large scale campus (hospital, school, datacenter, airport, etc.), a crucial factor is to know how much electricity will be needed to support the finished structure, and where that electricity is coming from. Now more than ever, decision makers need to be cognizent of the fact that new campuses need to be built in a region with easy access to renewable energy sources.
