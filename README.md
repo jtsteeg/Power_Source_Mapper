@@ -32,7 +32,7 @@ The Power Source Mapper pulls and cleans the most recent powerplant data from th
 5. deploy the project to a function app, follow vscode instructions for deployment
 6. copy the URL of the deployed azure function trigger in the VScode output, this will be the endpoint
 7. return to postToApi.py from repo 1
-8. update postToApi.py line 5 and 6 with "<endpoint>/login" and "endpoint>/addpowerplants 
+8. update postToApi.py line 5 and 6 with "<endpoint>/login" and "<endpoint>/addpowerplants" 
 9. if you did part 1 step 7, update postToApi.py line 8 and 9 with the same username and password
 10. run postToApi.py
 
@@ -40,7 +40,7 @@ The Power Source Mapper pulls and cleans the most recent powerplant data from th
 
 ### Part III : Frontend
 
-1. clone repo 3: https://github.com/jtsteeg/power-source-mapper-api-azure-function
+1. clone repo 3: https://github.com/jtsteeg/power-source-mapper-webapp
 2. update api endpoint in app.js line 19 to "<endpoint>/powerplants"
 3. (optional) obtain a Bing Maps API key from https://www.bingmapsportal.com/ and update map.js line 45
 3. run "npm install"
