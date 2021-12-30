@@ -20,7 +20,8 @@ The Power Source Mapper pulls and cleans the most recent powerplant data from th
 5. create a CosmosDB account here (https://docs.microsoft.com/en-us/azure/cosmos-db/sql/create-cosmosdb-resources-portal)
 6. copy the CosmosDB URI and PRIMARY KEY, insert them into createDatabase.py line 7 and 8
 7. (optional) change username and password on line 11 and 12 to one of your choosing
-8. run createDatabase.py
+8. install cosmosdb python dependency: 	pip install --pre azure-cosmos
+9. run createDatabase.py
 
    
 ### Part II : Backend creation and database population
