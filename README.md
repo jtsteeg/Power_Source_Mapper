@@ -34,15 +34,11 @@ The Power Source Mapper pulls and cleans the most recent powerplant data from th
 
 
 ### Part III : Frontend
-```javascript
-code example
-```
 
-
-
-```python
-#pip install x
-```   
+1. clone repo 3: https://github.com/jtsteeg/power-source-mapper-webapp
+2. insert api endpoint in app.js line 19 (should look something like "http://127.0.0.1:5000/powerplants")
+3. rn "npm install"
+4. run "npm start"
 
 ## Future feature updates
 - [x] Add detailed fuel information
