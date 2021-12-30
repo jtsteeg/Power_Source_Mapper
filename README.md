@@ -25,21 +25,27 @@ The Power Source Mapper pulls and cleans the most recent powerplant data from th
    
 ### Part II : Backend creation and database population
 
-1. clone repo 2: https://github.com/jtsteeg/Power_Source_Mapper_API
+1. clone repo 2: https://github.com/jtsteeg/power-source-mapper-api-azure-function
 2. create virtual environment and install dependencies in requirements.txt
-3. update app.py lines 14-18 with your CosmosDB data
-4. run app.py, keep it running as you proceed
-5. return to postToApi.py from repo 1
-6. if you did part I part 7, update postToApi.py line 8 and 9 with the same username and password
-7. run postToApi.py
+3. update main.py lines 14-18 with your CosmosDB data
+4. install azure functions extension for vscode
+5. deploy the project to a function app, follow vscode instructions for deployment
+6. copy the URL of the deployed azure function trigger in the VScode output, this will be the endpoint
+7. return to postToApi.py from repo 1
+8. update postToApi.py line 5 and 6 with "<endpoint>/login" and "endpoint>/addpowerplants 
+9. if you did part 1 step 7, update postToApi.py line 8 and 9 with the same username and password
+10. run postToApi.py
+
 
 
 ### Part III : Frontend
 
-1. clone repo 3: https://github.com/jtsteeg/power-source-mapper-webapp
-2. insert api endpoint in app.js line 19 (should look something like "http://127.0.0.1:5000/powerplants")
-3. rn "npm install"
+1. clone repo 3: https://github.com/jtsteeg/power-source-mapper-api-azure-function
+2. update api endpoint in app.js line 19 to "<endpoint>/powerplants"
+3. (optional) obtain a Bing Maps API key from https://www.bingmapsportal.com/ and update map.js line 45
+3. run "npm install"
 4. run "npm start"
+5. take the webapp URL (i.e "http://localhost:3000/") and add it to the azure function CORs exception list, reload page
 
 ## Future feature updates
 - [x] Add detailed fuel information
