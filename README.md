@@ -9,7 +9,7 @@ The Power Source Mapper pulls and cleans the most recent powerplant data from th
 
 ### Approach
 
-This project was performed in 3 steps with the goal of consolidating data from multiple api endpoints into a single database, scrubbing the data, and then displaying it on a webapp in an easy to understand fashion.
+This project was performed in 3 steps with the goal of consolidating data from multiple api endpoints into a single database, scrubbing the data, and then displaying it on a webapp hosted on the Microsoft Azure platform.
 
 
 #### Part I : Data aquisition and Database creation
