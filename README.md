@@ -1,5 +1,5 @@
 # Power Source Mapper
-deployed on azure: https://www.powersourcemapper.com/
+Jacob Steeg's Capstone project for the Microsoft Leap program. Currently deployed on azure: https://www.powersourcemapper.com/
 ## Project description
 ### What problem does this project solve?
 When planning to build a large scale campus (hospital, school, datacenter, airport, etc.), a crucial factor is to know how much electricity will be needed to support the finished structure, and where that electricity is coming from. Now more than ever, decision makers need to be cognizent of the fact that new campuses need to be built in a region with easy access to renewable energy sources.
@@ -7,6 +7,28 @@ When planning to build a large scale campus (hospital, school, datacenter, airpo
 ### How does it solve the problem?
 The Power Source Mapper pulls and cleans the most recent powerplant data from the EIA database and displays it on a map to provide a heuristic for decision makers to visually identify the location, capacity, and the sustainability of energy sources in a given area.
 
+### Approach
+
+This project was performed in 3 steps with the goal of consolidating data from multiple api endpoints into a single database, scrubbing the data, and then displaying it on a webapp in an easy to understand fashion.
+
+
+#### Part I : Data aquisition and Database creation
+Tools used: Python, CosmosDB
+Using Python, I scraped 3 separate EIA endpoints for relevant Power Plant information:
+<ol>
+  <li>Name</li>
+  <li>Laditude/longitude</li>
+  <li>annual output in MWH</li>
+  <li>Fuels used</li>
+  <li>primary fuel used</li>
+  <li>determination of the sustainability of the primary fuel used by the definiton set out by the EIA https://www.eia.gov/energyexplained/renewable-sources/ </li>
+</ol>
+
+During this process the data was cleaned to prevent listing any powerplants that were not in operation by 2020 (the most recent year data was available), or that were in operation but had an output of 0 MWH or less. this data was consolidated into a JSON file.
+#### Part II : Backend and database population
+Tools used: Python, Flask, Azure functions
+#### Part III : Frontend
+Tools used: React.js, Bing maps developer tools, azure static web apps
 
 ## Install and run
 
@@ -33,7 +55,7 @@ The Power Source Mapper pulls and cleans the most recent powerplant data from th
 5. deploy the project to a function app, follow vscode instructions for deployment
 6. copy the URL of the deployed azure function trigger in the VScode output, this will be the endpoint
 7. return to postToApi.py from repo 1
-8. update postToApi.py line 5 and 6 with "<endpoint>/login" and "<endpoint>/addpowerplants" 
+8. update postToApi.py line 5 and 6 with "<<endpoint>>/login" and "<<endpoint>>/addpowerplants" 
 9. if you did part 1 step 7, update postToApi.py line 8 and 9 with the same username and password
 10. run postToApi.py
 
@@ -53,8 +75,9 @@ The Power Source Mapper pulls and cleans the most recent powerplant data from th
 - [ ] Replace color coded pins with recognizable icons
 - [ ] Add sorting functionality
 - [ ] highlight plant details on map click
+- [ ] expand coverage to continental USA
 
 
 
 ## License
-TBA
+Usage is provided under the MIT License. See LICENSE for the full details.
