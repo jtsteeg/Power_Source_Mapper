@@ -72,7 +72,7 @@ Tools used:
 5. deploy the project to a function app, follow vscode instructions for deployment
 6. copy the URL of the deployed azure function trigger in the VScode output, this will be the endpoint
 7. return to postToApi.py from repo 1
-8. update postToApi.py line 5 and 6 with "<<endpoint>>/login" and "<<endpoint>>/addpowerplants" 
+8. update postToApi.py line 5 and 6 with "endpoint/login" and "endpoint/addpowerplants" 
 9. if you did part 1 step 7, update postToApi.py line 8 and 9 with the same username and password
 10. run postToApi.py
 
