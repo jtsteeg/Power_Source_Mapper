@@ -34,7 +34,7 @@ Tools used:
 <ul>
   <li>Python</li>
   <li>Flask</li>
-  <li>Azure Fnnctions</>
+  <li>Azure Functions</>
 </ul>
 An API was created using python with flask and connected to the CosmosDB database. It was created to be the only channel through which the database can be accessed or updated, and the POST endpoint checks new powerplant submissions for data integrity, the JSON containing the power plant data is then uploaded to the DB via the API. JWT tokens are implemented here to maintain that only authorized users have Create/Update abilities, while read abilities can be performed by anyone with access to the endpoint
   
